@@ -4,12 +4,25 @@ using UnityEngine;
 
 public class ActivateTest : MonoBehaviour
 {
-    // https://alunos.crieseusjogos.com.br/51428-desenvolvimento-unity/1139160-manipulando-getcomponents-e-gameobjects
+    
     public GameObject Objeto;
     // Start is called before the first frame update
     void Start()
     {
-        Objeto.SetActive(false);
+        // Deactivate Object
+        // Objeto.SetActive(false); 
+
+        // Deactivate Object using GetComponent
+        // Objeto.GetComponent<SpriteRenderer>().enabled = false;
+
+        // Check if Object is Active
+        if (Objeto.activeSelf)
+        {
+            Objeto.SetActive(false);
+        } else
+        {
+            Objeto.SetActive(true);
+        }
     }
 
     // Update is called once per frame
